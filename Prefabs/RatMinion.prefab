@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5504196224307990992}
   - component: {fileID: 1812553676663233896}
   - component: {fileID: 1665431978036838309}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 1594012193547024055}
   - component: {fileID: 3759154783801028196}
   - component: {fileID: 8795173627574472288}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 8615131045676275731}
   - component: {fileID: 6171837684820684239}
   - component: {fileID: 6666062213128187144}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -263,7 +263,7 @@ GameObject:
   - component: {fileID: 5599250365612883857}
   - component: {fileID: 738960809707574648}
   - component: {fileID: 6975654396126580801}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: Health Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -366,7 +366,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1929557924029019735}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -407,7 +407,7 @@ GameObject:
   - component: {fileID: 4803985914039648344}
   - component: {fileID: 3452703641026578059}
   - component: {fileID: 8179379248599245303}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: RatMinion
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -490,8 +490,8 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_AngularDrag: 0
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -516,10 +516,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 2
+  wanderSpeed: 0.4
+  wanderRadius: 1
   maxHealth: 10
   damage: 30
   healthDropChance: 0.15
   speedDropChance: 0.25
+  aggroRange: 7
   healthPickupPrefab: {fileID: 3237825119954345502, guid: bf2811122a1700946962e9fe00acad7d, type: 3}
   speedPickupPrefab: {fileID: 7101930469587944671, guid: a35c6b8204daefe4fa1af2952db9bdc2, type: 3}
   damageNum: {fileID: 578976292192593733, guid: a670c951c9bbc434fb9476bcc2bbcde7, type: 3}

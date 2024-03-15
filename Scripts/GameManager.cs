@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
+//Put reference
+
 public class GameManager : MonoBehaviour
 {
     public TileBase floorTile;      
@@ -33,7 +35,6 @@ public class GameManager : MonoBehaviour
         GenerateWalls();
     }
 
-    
     void MoveWalker()
     {
         currentPosition += GetRandomDirection(); //move
@@ -41,7 +42,7 @@ public class GameManager : MonoBehaviour
         currentPosition.y = Mathf.Clamp(currentPosition.y, 0, gridSizeY - 1);   
     }
 
-    // random direction number
+    //random direction number
     Vector3Int GetRandomDirection()
     {
         int dir = Random.Range(0, 4);  
@@ -59,29 +60,27 @@ public class GameManager : MonoBehaviour
         return Vector3Int.zero;
     }
 
- 
     void CreateFloorTile(Vector3Int position)
     {
-        // create floor no overlap
+        //create floor no overlap
         if (!floorTilemap.HasTile(position))
         {
             floorTilemap.SetTile(position, floorTile);
         }
     }
 
- 
     void GenerateWalls()
     {
         BoundsInt floorBounds = floorTilemap.cellBounds; //floor info
 
-        // loop floor extended bounds for wall gen
+        //loop floor extended bounds for wall gen
         for (int x = floorBounds.xMin - 1; x <= floorBounds.xMax + 1; x++)
         {
             for (int y = floorBounds.yMin - 1; y <= floorBounds.yMax + 1; y++)
             {
                 Vector3Int position = new Vector3Int(x, y, 0);
 
-                // no overlap
+                //no overlap
                 if (!floorTilemap.HasTile(position) && !wallTilemap.HasTile(position))
                 {
                     bool adjacentToFloor = false; //set flag false

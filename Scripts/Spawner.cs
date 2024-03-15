@@ -1,41 +1,34 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    public float spawnRate = 1.0f;
-    public float delay = 3f;
-    public int enemyCount;
-    public GameObject enemy;
-    bool waveDone = true;
+    public int enemyCount = 5;
+    public float radius = 3.0f;
+    public GameObject enemyPrefab; 
 
     // Start is called before the first frame update
     void Start()
     {
+        SpawnEnemies();
     }
 
-    // Update is called once per frame
-    void Update()
+    // Spawn enemies at random positions around the spawner
+    void SpawnEnemies()
     {
-        if (waveDone == true)
-        {
-            StartCoroutine(waveSpawner());
-        }
-    }
- 
-    IEnumerator waveSpawner()
-    {
-        waveDone = false;
-
         for (int i = 0; i < enemyCount; i++)
         {
-            GameObject enemyClone = Instantiate(enemy, transform.position, Quaternion.identity);
-            yield return new WaitForSeconds(spawnRate);
+            Vector3 spawnPosition = GetRandomSpawnPosition();
+            Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
         }
+    }
 
-        yield return new WaitForSeconds(delay);
+    // Generate a random spawn position around the spawner
+    Vector3 GetRandomSpawnPosition()
+    {
+        Vector2 randomDirection = Random.insideUnitCircle.normalized;
+        Vector3 spawnPosition = transform.position + (Vector3)randomDirection * radius;
 
-        waveDone = true;
+        return spawnPosition;
     }
 }

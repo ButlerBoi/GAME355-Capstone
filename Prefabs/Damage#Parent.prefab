@@ -139,12 +139,12 @@ TextMesh:
   m_Alignment: 1
   m_TabSize: 4.31
   m_FontSize: 224
-  m_FontStyle: 1
+  m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
   m_Color:
     serializedVersion: 2
-    rgba: 4278190335
+    rgba: 4294967295
 --- !u!95 &334705644223542152
 Animator:
   serializedVersion: 7

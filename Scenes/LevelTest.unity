@@ -428,9 +428,9 @@ MonoBehaviour:
   wallTile: {fileID: 11400000, guid: cd99e2e23498c2f40a03c23803db2193, type: 2}
   floorTilemap: {fileID: 475568572}
   wallTilemap: {fileID: 2085796461}
-  gridSizeX: 200
-  gridSizeY: 200
-  numSteps: 2000
+  gridSizeX: 2000
+  gridSizeY: 2000
+  numSteps: 20000
 --- !u!4 &1742923922
 Transform:
   m_ObjectHideFlags: 0
